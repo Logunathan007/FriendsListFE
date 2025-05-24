@@ -1,0 +1,19 @@
+<div class="header">
+  <span class="header-icon">👥</span>
+  <span class="header-title">Friends List</span>
+</div>
+<div class="container">
+  <input type="text" [(ngModel)]="newFriendName" placeholder="Enter Friends Name" class="">
+  <button (click)="addFriend()">Add</button>
+</div>
+<div class="friends-list">
+  <ul>
+    <li *ngFor="let friend of friends">
+      {{ friend }}
+      <button class="delete-btn" (click)="deleteFriend(friend)">Delete</button>
+    </li>
+  </ul>
+</div>
+<div *ngIf="isLoading" class="loading-overlay">
+  <div class="spinner"></div>
+</div>
